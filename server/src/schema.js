@@ -11,6 +11,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
+    "Increment the number of views of a given track, when the track card is clicked"
     incrementTrackViews(id: ID!): IncrementTrackViewsResponse!
   }
 

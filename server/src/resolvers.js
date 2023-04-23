@@ -15,7 +15,6 @@ const resolvers = {
       return dataSources.trackAPI.getModule(id);
     },
   },
-
   Mutation: {
     // increments a track's numberOfViews property
     incrementTrackViews: async (_, { id }, { dataSources }) => {
@@ -31,13 +30,12 @@ const resolvers = {
         return {
           code: err.extensions.response.status,
           success: false,
-          message: err.extension.response.body,
+          message: err.extensions.response.body,
           track: null,
         };
       }
     },
   },
-
   Track: {
     author: ({ authorId }, _, { dataSources }) => {
       return dataSources.trackAPI.getAuthor(authorId);
